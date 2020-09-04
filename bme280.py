@@ -14,7 +14,9 @@ temp = str(bme280.temperature)
 hum = str(bme280.humidity)
 pressure = str(bme280.pressure)
 
-line = date + '\t' + current_time + '\t' + str(unix_time) + '\t' + temp + '\t' + hum + '\t' + pressure + '\n'
+DEVICE_NAME = 'basement'
+
+line = DEVICE_NAME + '\t' +date + '\t' + current_time + '\t' + str(unix_time) + '\t' + temp + '\t' + hum + '\t' + pressure + '\n'
 with open('/home/pi/all_data.tsv','a') as file:
 	file.write(line)
 
