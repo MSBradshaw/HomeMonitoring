@@ -15,7 +15,8 @@ temp = str(bme280.temperature)
 hum = str(bme280.humidity)
 pressure = str(bme280.pressure)
 
-DEVICE_NAME = 'basement'
+# this script takes 1 param, the name of the device should be 1 or 3 things. 'basement','upstairs','main'
+DEVICE_NAME = sys.argv[1]
 
 line = DEVICE_NAME + '\t' +date + '\t' + current_time + '\t' + str(unix_time) + '\t' + temp + '\t' + hum + '\t' + pressure + '\n'
 with open('/home/pi/all_data.tsv','a') as file:
